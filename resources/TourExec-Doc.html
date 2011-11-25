@@ -1,0 +1,90 @@
+<HTML>
+
+<!-- Theodore C. Belding -->
+<!-- Program for the Study of Complex Systms -->
+<!-- All contents copyright (C) 1996, all rights reserved. -->
+<!-- contact: http@maria.physics.lsa.umich.edu -->
+
+<HEAD>
+
+<TITLE>Complexity of Cooperation -- TourExec-Doc</TITLE>
+
+<!-- makes the background white and viewed links red -->
+<BODY bgcolor="#ffffff" vlink="#b9006f">
+<H2>Complexity of Cooperation Web Site</H2>
+<H3>TourExec-Doc</H3>
+<HR>
+<!-- =========================================== -->
+<!-- =========================================== -->
+<FONT>
+<!************************************>
+<b>Note:</b> The source code for the program is in HTML format.  To get a plain ASCII text
+copy of the code, you can either save the page as "text" (and strip off the extraneous text in 
+the  header and footer) or save as "source" or "HTML" and extract the text between the
+&lt;pre&gt; and &lt;/pre&gt; tags. <hr>
+7/26/93<p>
+7/30/93<p>
+4/30/96<p>
+Axelrod<p>
+			Read Me (TourExec Documentation)<p>
+<p>
+1. 	The TourExec1.1 program runs all 63 rules from the second round of
+Axelrod's tournament, and includes parametric amount of noise.<p>
+<p>
+2. Function arguments
+<p>
+  The arguments for the functions giving the rules are
+as follows (where 0 means cooperation and 1 means defection):
+<p>
+J  the others player's choice on the previous move (0 or 1),
+   (J=0 on the first move)
+<p>
+M the move number
+<p>
+K your score so far
+<p>
+L the other player's score so far
+<p>
+R a floating point number between 0 and 1 which will be a new
+number every time a new choice is called for.
+<p>
+3. To run <p>
+	a. the -SAVEALL option must be used in the Language Systems Fortran compiler to make
+the local variables in the rule functions static (ie remembers from one call to
+the next).<p>
+<p>
+	<p>
+4. Editing requirements for this compliler.<p>
+<p>
+	a. Because the Language Systems compiler does not save the value of a function
+as a local static variable, I had to have the value as an added parameter, e.g.
+JA in the example above.  JA is one's own previous choice (0 initially).  I
+also added as the first execuatable statement of each rule an assignment:<p>
+      K75R=JA<p>
+<p>
+	b. In the case of K39 rule a trivial change in the logic was necessary to
+avoid the Language Systems compiler's getting into trouble in the way it
+processes multiple conditions in an IF statement out of order. The change
+causes to difference in the algorithm.<p>
+<p>
+
+<!************************************>
+</FONT>
+<!-- =========================================== -->
+<!-- =========================================== -->
+
+<HR>
+
+<a href = "../CC2.html">Back to Chapter 2</a><br>
+<a href = "../../ComplexCoop.html">Back to Complexity of Cooperation Home Page</a><br>
+<p>
+University of Michigan <a href="http://pscs.physics.lsa.umich.edu/">Program for the Study of Complex Systems</a><br>
+<FONT SIZE="-1">Contact <a href="mailto:http@maria.physics.lsa.umich.edu">http@maria.physics.lsa.umich.edu</a>.
+<BR>
+Revised  <em>November 4, 1996</em>.
+<br>
+<BR>
+</FONT>
+</BODY>
+</HTML>
+
